@@ -49,7 +49,7 @@ try {
     git add -A
     git commit -m "Drive $versao: $Notas"
     git tag "v$versao"
-    git push origin HEAD --tags
+    git push origin HEAD "v$versao"  # só a tag nova (a v6.0.3 do ownCloud aponta para outro histórico)
     gh release create "v$versao" $instalador $manifesto --repo $Repo --title "Drive $versao" --notes $Notas --latest
     if ($LASTEXITCODE -ne 0) { throw "gh release falhou" }
 } finally {
