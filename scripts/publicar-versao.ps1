@@ -1,4 +1,4 @@
-# Publica uma versão nova do Drive: compila, gera o instalador e cria a release no GitHub.
+﻿# Publica uma versão nova do Drive: compila, gera o instalador e cria a release no GitHub.
 # Todos os clientes procuram a versão nova ao abrir e a cada 2 horas, baixam e instalam sozinhos.
 #
 # Uso:  .\scripts\publicar-versao.ps1 -Notas "Corrige o envio de planilhas abertas no Excel"
