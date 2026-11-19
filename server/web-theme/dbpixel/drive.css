@@ -1,0 +1,17 @@
+/* Drive na web: acabamento da DBPixel sobre o ownCloud Web 7.0.3 (carregado por "styles" no config.json).
+   As cores vêm do theme.json; aqui ficam as fontes da marca e os detalhes de layout dos protótipos aprovados. */
+
+@font-face { font-family: "Nunito Sans"; font-weight: 400; font-display: swap; src: url("assets/NunitoSans-400.woff") format("woff"); }
+@font-face { font-family: "Nunito Sans"; font-weight: 600; font-display: swap; src: url("assets/NunitoSans-600.woff") format("woff"); }
+@font-face { font-family: "Nunito Sans"; font-weight: 700; font-display: swap; src: url("assets/NunitoSans-700.woff") format("woff"); }
+@font-face { font-family: "Montserrat"; font-weight: 600; font-display: swap; src: url("assets/Montserrat-600.woff") format("woff"); }
+@font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url("assets/Montserrat-700.woff") format("woff"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; font-display: swap; src: url("assets/Montserrat-800.woff") format("woff"); }
+
+:root {
+  --drive-body: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+  --drive-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
+}
+
+html, body, #web, .oc-button, input, textarea, select { font-family: var(--drive-body) !important; }
+h1, h2, h3, .oc-modal-title, .oc-breadcrumb-list-item, .oc-button { font-family: var(--drive-display) !important; }

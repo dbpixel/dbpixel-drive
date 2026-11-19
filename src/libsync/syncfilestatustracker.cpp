@@ -15,6 +15,7 @@
 
 #include "syncfilestatustracker.h"
 #include "common/asserts.h"
+#include "common/filesystembase.h"
 #include "common/syncjournaldb.h"
 #include "common/syncjournalfilerecord.h"
 #include "syncengine.h"
@@ -106,7 +107,8 @@ SyncFileStatus SyncFileStatusTracker::fileStatus(const QString &relativePath)
 
     const QString absolutePath = _syncEngine->localPath() + relativePath;
 
-    if (!QFileInfo::exists(absolutePath)) {
+    // Drive: FileSystem::fileExists() checks .lnk natively (QFileInfo follows the shortcut)
+    if (!FileSystem::fileExists(absolutePath)) {
         return SyncFileStatus(SyncFileStatus::StatusNone);
     }
 

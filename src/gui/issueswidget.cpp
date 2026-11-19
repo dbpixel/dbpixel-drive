@@ -224,11 +224,17 @@ IssuesWidget::IssuesWidget(QWidget *parent)
     _statusSortModel->setFilterKeyColumn(static_cast<int>(ProtocolItemModel::ProtocolItemRole::Status));
     _ui->_tableView->setModel(_statusSortModel);
 
-    auto header = new ExpandingHeaderView(QStringLiteral("ActivityErrorListHeaderV2"), _ui->_tableView);
+    auto header = new ExpandingHeaderView(QStringLiteral("ActivityErrorListHeaderV2-drive"), _ui->_tableView);
     _ui->_tableView->setHorizontalHeader(header);
     header->setSectionResizeMode(QHeaderView::Interactive);
     header->setExpandingColumn(static_cast<int>(ProtocolItemModel::ProtocolItemRole::Action));
     header->setSortIndicator(static_cast<int>(ProtocolItemModel::ProtocolItemRole::Time), Qt::DescendingOrder);
+    if (!Theme::instance()->multiAccount()) {
+        for (auto c : {ProtocolItemModel::ProtocolItemRole::Folder, ProtocolItemModel::ProtocolItemRole::Size, ProtocolItemModel::ProtocolItemRole::Account}) {
+            header->hideSection(static_cast<int>(c));
+        }
+        header->resizeSection(static_cast<int>(ProtocolItemModel::ProtocolItemRole::File), 260);
+    }
 
     connect(_ui->_tableView, &QTreeView::customContextMenuRequested, this, &IssuesWidget::slotItemContextMenu);
     _ui->_tableView->horizontalHeader()->setContextMenuPolicy(Qt::CustomContextMenu);

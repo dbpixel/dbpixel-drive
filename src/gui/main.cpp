@@ -45,6 +45,7 @@
 #include <QTimer>
 #include <QTranslator>
 #ifdef Q_OS_WIN
+#include "gui/explorerpane_win.h"
 #include <qt_windows.h>
 #endif
 
@@ -381,6 +382,13 @@ QString setupTranslations(QApplication *app)
 
 int main(int argc, char **argv)
 {
+#ifdef Q_OS_WIN
+    // Drive: o desinstalador tira a pasta do Explorer (o Windows devolve os arquivos ao estado comum)
+    if (argc > 1 && argv[1] == QByteArrayLiteral("--drive-remover-explorer")) {
+        OCC::ExplorerPane::unregisterAll();
+        return 0;
+    }
+#endif
     return RestartManager([](int argc, char **argv) {
         // when called with --cmd we run the cmd client in a sub process and forward everything
         if (argc > 1 && argv[1] == QByteArrayLiteral("--cmd")) {

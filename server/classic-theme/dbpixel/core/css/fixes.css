@@ -1,0 +1,87 @@
+/* ---- BROWSER-SPECIFIC FIXES ---- */
+
+/* remove dotted outlines in Firefox */
+::-moz-focus-inner {
+	border: 0;
+}
+
+/* fix height of select boxes for OS X */
+select {
+	height: 32px;
+}
+
+/* deactivate show password toggle for IE. Does not work for 8 and 9+ have their own implementation. */
+.ie #show, .ie #show+label {
+	display: none;
+	visibility: hidden;
+}
+
+/* =====================================================================================
+   Drive (DBPixel): tema da interface clássica. Acima está o fixes.css original do ownCloud 10.15.3;
+   daqui para baixo, a página de entrada e a de autorização no padrão dos protótipos L1 e L2.
+   ===================================================================================== */
+@font-face { font-family: "Nunito Sans"; font-weight: 400; font-display: swap; src: url("../fonts/NunitoSans-400.woff") format("woff"); }
+@font-face { font-family: "Nunito Sans"; font-weight: 600; font-display: swap; src: url("../fonts/NunitoSans-600.woff") format("woff"); }
+@font-face { font-family: "Nunito Sans"; font-weight: 700; font-display: swap; src: url("../fonts/NunitoSans-700.woff") format("woff"); }
+@font-face { font-family: "Montserrat"; font-weight: 600; font-display: swap; src: url("../fonts/Montserrat-600.woff") format("woff"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; font-display: swap; src: url("../fonts/Montserrat-800.woff") format("woff"); }
+
+body, input, textarea, select, button, .button { font-family: "Nunito Sans", "Segoe UI", system-ui, sans-serif; }
+
+/* fundo navy com os cortes chanfrados da marca */
+#body-login { background: #041F46 !important; background-image: none !important; overflow-x: hidden; }
+#body-login::before { content: ""; position: fixed; right: -210px; top: -210px; width: 420px; height: 420px; background: #6F8BB8; transform: rotate(45deg); opacity: .9; z-index: 0; }
+#body-login::after { content: ""; position: fixed; left: -130px; bottom: -130px; width: 260px; height: 260px; background: #0B2A57; transform: rotate(45deg); z-index: 0; }
+#body-login .wrapper { position: relative; z-index: 1; }
+
+/* cartão branco com a marca, o título e o formulário */
+#body-login .v-align { box-sizing: border-box; width: 420px; max-width: calc(100vw - 32px); margin: 9vh auto 0; padding: 32px 36px 28px;
+  background: #FFFFFF; border-radius: 18px; box-shadow: 0 24px 60px rgba(0, 0, 0, .3); text-align: left; color: #0A1222; }
+#body-login header, #body-login #header { padding: 0; margin: 0; height: auto; background: none; }
+#body-login #header .logo { background-image: url("../img/logo.svg"); background-position: left center; background-size: contain; width: 132px; height: 38px; margin: 0; }
+#body-login #header::after { content: "UM PRODUTO DBPIXEL"; display: block; margin-top: 8px; font: 600 10.5px "Montserrat", sans-serif; letter-spacing: .16em; color: #5E6573; }
+#body-login form { width: auto; margin: 0; }
+#body-login form[name="login"]::before { content: "Entrar"; display: block; margin: 22px 0 4px; font: 600 22px "Montserrat", sans-serif; color: #0A1222; }
+#body-login form[name="login"] .grouptop::before { content: "Acesse sua conta para continuar."; display: block; margin-bottom: 8px; font-size: 14px; color: #5E6573; font-weight: 400; }
+#body-login .grouptop, #body-login .groupmiddle, #body-login .groupbottom { max-width: none; margin: 0 0 4px; }
+#body-login form label { color: #0A1222; font: 700 13px "Nunito Sans", sans-serif; margin: 12px 0 6px; text-align: left; }
+#body-login input[type="text"], #body-login input[type="password"], #body-login input[type="email"] {
+  box-sizing: border-box; width: 100%; height: 44px; margin: 0; padding: 0 12px; border: 1px solid #D0D5DD !important; border-radius: 10px;
+  background: #FFFFFF; color: #0A1222; font-size: 15px; font-weight: 400; box-shadow: none !important; }
+#body-login input[type="text"]:focus, #body-login input[type="password"]:focus, #body-login input[type="email"]:focus {
+  border-color: #47689A !important; box-shadow: 0 0 0 3px rgba(71, 104, 154, .2) !important; outline: none; }
+#body-login .submit-wrap { max-width: none; margin: 20px 0 0; }
+#body-login .submit-wrap #submit, #body-login .login-button { width: 100%; height: 44px; margin: 0; border: 0; border-radius: 10px; background: #47689A; color: #FFFFFF;
+  font: 600 15px "Montserrat", sans-serif; cursor: pointer; }
+#body-login .submit-wrap #submit:hover, #body-login .submit-wrap #submit:focus { background: #3F5F8F; }
+#body-login .remember-login-container { margin-top: 14px; text-align: left; }
+#body-login form input[type="checkbox"] + label, #body-login .remember-login-container label { color: #5E6573 !important; font-weight: 400; font-size: 13.5px; }
+#body-login input[type="checkbox"].checkbox--white + label:before { background-image: url("/core/img/actions/checkbox.svg"); }
+#body-login input[type="checkbox"].checkbox--white:checked + label:before { background-image: url("/core/img/actions/checkbox-checked.svg"); }
+#body-login .warning, #body-login p.warning, #body-login #lost-password.warning { display: block; box-sizing: border-box; margin: 14px 0 0; padding: 10px 12px;
+  border: 0; border-radius: 10px; background: #FFF1E6; color: #B84000 !important; font-size: 13.5px; text-align: left; }
+#body-login #lost-password, #body-login a { color: #43638F; }
+#body-login .info, #body-login .infogroup { color: #0A1222; }
+
+/* rodapé: "Precisa de ajuda? Fale com o suporte", logo abaixo do cartão */
+#body-login footer { position: relative; z-index: 1; margin-top: 18px; }
+#body-login footer * { transform: none !important; }
+#body-login footer p.info { color: #C9D4E5; font-size: 13.5px; text-align: center; }
+#body-login footer p.info a { color: #FFFFFF; font-weight: 600; padding: 0; margin: 0; }
+
+/* autorização do aplicativo (OAuth2): mesmo cartão, botões principal e secundário */
+#body-login .error { display: block; color: #0A1222; text-align: left; }
+#body-login .error p, #body-login .error b { color: #0A1222; }
+#body-login .error b { display: block; margin-top: 22px; font: 600 20px/1.3 "Montserrat", sans-serif; }
+#body-login .error br { display: none; }
+#body-login .error p { margin: 8px 0 0; font-size: 14px; color: #5E6573; }
+#body-login .error button { box-sizing: border-box; width: 100%; height: 44px; margin: 18px 0 0; border-radius: 10px; font: 600 15px "Montserrat", sans-serif; cursor: pointer; }
+#body-login .error button[type="submit"] { background: #47689A; color: #FFFFFF; border: 0; }
+#body-login .error a button { margin-top: 10px; background: #F4F5F7; color: #0A1222; border: 1px solid #D9DCE2; }
+
+@media (max-width: 480px) {
+  #body-login .v-align { margin-top: 24px; padding: 24px 20px; }
+}
+
+/* cabeçalho da interface clássica: logo do Drive (quadrado + nome) sem esticar */
+#header .logo-icon { background-size: contain !important; background-position: left center; width: 86px; }

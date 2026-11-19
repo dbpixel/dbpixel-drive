@@ -502,7 +502,7 @@ void ActivitySettings::setActivityTabHidden(bool hidden)
     }
 
     if (!hidden && _activityTabId == -1) {
-        _activityTabId = _tab->addTab(_activityWidget, QStringLiteral("Avisos e atividade no servidor"));
+        _activityTabId = _tab->addTab(_activityWidget, QStringLiteral("No servidor"));
     }
 }
 

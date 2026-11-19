@@ -14,6 +14,9 @@
 
 #include "owncloudgui.h"
 #include "traypanel.h"
+#ifdef Q_OS_WIN
+#include "gui/explorerpane_win.h"
+#endif
 #include "aboutdialog.h"
 #include "account.h"
 #include "accountmanager.h"
@@ -123,6 +126,12 @@ ownCloudGui::ownCloudGui(Application *parent)
 
     setupActions();
     setupContextMenu();
+    // Drive: o painel existe desde o início para acompanhar envios, recebimentos e problemas
+    _trayPanel = new TrayPanel(this);
+#ifdef Q_OS_WIN
+    // Drive: atalho "Drive" no painel lateral do Explorador de Arquivos
+    new ExplorerPane(this);
+#endif
 
     // init systry
     slotComputeOverallSyncStatus();

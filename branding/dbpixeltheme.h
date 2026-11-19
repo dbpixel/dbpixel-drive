@@ -25,6 +25,8 @@ public:
     // o servidor já vem preenchido: o cliente só digita usuário e senha
     QString overrideServerUrl() const override { return QStringLiteral("https://drive.dbpixel.com.br"); }
 
+    QString conflictHelpUrl() const override { return QStringLiteral("https://dbpixel.com.br/tutoriais/armazenamento-em-nuvem"); }
+
     QString helpUrl() const override { return QStringLiteral("https://dbpixel.com.br/tutoriais/armazenamento-em-nuvem"); }
 
     // conteúdo do assistente em fundo branco com texto escuro (protótipo W1 a W5); a faixa navy com a
@@ -56,7 +58,7 @@ public:
     QString about() const override
     {
         return QStringLiteral("<p>Versão %1 · um produto DBPixel</p><p>Drive é o aplicativo de sincronização do Armazenamento em Nuvem da DBPixel.</p>"
-                              "<p>Suporte: <a href=\"https://dbpixel.com.br\">dbpixel.com.br</a> · WhatsApp (13) 4042-3797</p>"
+                              "<p>Suporte: <a href=\"https://dbpixel.com.br\">dbpixel.com.br</a></p>"
                               "<p><small>Baseado no ownCloud Desktop Client, distribuído sob a GNU GPL versão 2.</small></p>")
             .arg(Utility::escape(Version::displayString()));
     }

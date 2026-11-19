@@ -4041,7 +4041,7 @@ Tem certeza de que deseja continuar?</translation>
     <message>
         <location filename="../src/gui/newwizard/setupwizardwidget.ui" line="14"/>
         <source>Add New Account</source>
-        <translation>Adicionar Nova Conta</translation>
+        <translation>Entrar</translation>
     </message>
     <message>
         <location filename="../src/gui/newwizard/setupwizardwidget.ui" line="101"/>

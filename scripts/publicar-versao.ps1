@@ -29,7 +29,9 @@ foreach ($passo in @("--compile", "--install", "--qmerge", "--package")) {
 $dist = Join-Path $raiz "dist"
 New-Item -ItemType Directory -Force $dist | Out-Null
 $instalador = Join-Path $dist "Drive-$versao-setup.exe"
-Copy-Item "C:\Git\_craft\binaries\owncloud-client-HEAD-master-windows-cl-msvc2022-x86_64.exe" $instalador -Force
+# o nome do arquivo do Craft muda com o branch (HEAD, main...): pega o instalador mais novo
+$gerado = Get-ChildItem "C:\Git\_craft\binaries\owncloud-client-*-windows-cl-msvc2022-x86_64.exe" | Sort-Object LastWriteTime | Select-Object -Last 1
+Copy-Item $gerado.FullName $instalador -Force
 $sha = (Get-FileHash $instalador -Algorithm SHA256).Hash.ToLower()
 $url = "https://github.com/$Repo/releases/download/v$versao/Drive-$versao-setup.exe"
 $manifesto = Join-Path $dist "drive-update.json"

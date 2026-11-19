@@ -24,6 +24,7 @@
 #include "openfilemanager.h"
 #include "protocolwidget.h"
 #include "syncfileitem.h"
+#include "theme.h"
 
 #include "models/expandingheaderview.h"
 
@@ -51,12 +52,16 @@ ProtocolWidget::ProtocolWidget(QWidget *parent)
     _sortModel->setSortRole(Models::UnderlyingDataRole);
     _ui->_tableView->setModel(_sortModel);
 
-    auto header = new ExpandingHeaderView(QStringLiteral("ActivityListHeaderV2"), _ui->_tableView);
+    auto header = new ExpandingHeaderView(QStringLiteral("ActivityListHeaderV2-drive"), _ui->_tableView);
     _ui->_tableView->setHorizontalHeader(header);
     header->setSectionResizeMode(QHeaderView::Interactive);
     header->setExpandingColumn(static_cast<int>(ProtocolItemModel::ProtocolItemRole::File));
     header->setSortIndicator(static_cast<int>(ProtocolItemModel::ProtocolItemRole::Time), Qt::DescendingOrder);
     header->hideSection(static_cast<int>(ProtocolItemModel::ProtocolItemRole::Status));
+    if (!Theme::instance()->multiAccount()) {
+        header->hideSection(static_cast<int>(ProtocolItemModel::ProtocolItemRole::Folder));
+        header->hideSection(static_cast<int>(ProtocolItemModel::ProtocolItemRole::Account));
+    }
     header->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(header, &QHeaderView::customContextMenuRequested, header, [header, this] {
         auto menu = showFilterMenu(header, _sortModel, static_cast<int>(ProtocolItemModel::ProtocolItemRole::Account), tr("Account"));

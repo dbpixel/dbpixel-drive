@@ -1,0 +1,11 @@
+{ "translations": {
+    "Login" : "Entrar",
+    "Username or email" : "Usuário ou e-mail",
+    "Password" : "Senha",
+    "Stay logged in" : "Manter conectado",
+    "Wrong password. Reset it?" : "Senha incorreta. Quer redefinir?",
+    "Wrong password." : "Senha incorreta.",
+    "You took too long to log in, please try again now" : "A página ficou aberta por muito tempo. Entre de novo.",
+    "Alternative Logins" : "Outras formas de entrar"
+},"pluralForm" :"nplurals=2; plural=(n > 1);"
+}

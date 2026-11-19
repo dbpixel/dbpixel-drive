@@ -101,7 +101,8 @@ bool FileSystem::setModTime(const QString &filename, time_t modTime)
 bool FileSystem::fileChanged(const QFileInfo &info, qint64 previousSize, time_t previousMtime, std::optional<quint64> previousInode)
 {
     // previousMtime == -1 indicates the file does not exist
-    if (!info.exists() && previousMtime != -1) {
+    // Drive: fileExists() checks .lnk natively; QFileInfo follows the shortcut and reports a broken one as removed
+    if (!fileExists(info.filePath(), info) && previousMtime != -1) {
         qCDebug(lcFileSystem) << info.filePath() << "was removed";
         return true;
     }

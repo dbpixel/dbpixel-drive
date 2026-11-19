@@ -27,7 +27,7 @@ Rectangle {
             model: [
                 { glyph: "sync", title: "Sempre igual", text: "Mudou aqui, muda na nuvem e nos outros computadores" },
                 { glyph: "lock", title: "Seguro", text: "Conexão criptografada até o servidor da DBPixel" },
-                { glyph: "whatsapp", title: "Suporte de verdade", text: "Equipe técnica no WhatsApp (13) 4042-3797" }
+                { glyph: "whatsapp", title: "Suporte especializado", text: "Equipe técnica da DBPixel sempre que você precisar" }
             ]
             Rectangle {
                 Layout.fillWidth: true

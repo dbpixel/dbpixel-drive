@@ -185,7 +185,11 @@ IF( APPLE )
 elseif( WIN32 )
     target_sources(owncloudGui PRIVATE
             guiutility_win.cpp
-            folderwatcher_win.cpp)
+            folderwatcher_win.cpp
+            explorerpane_win.cpp
+            cloudfiles_win.cpp)
+    # Drive: API de arquivos de nuvem (coluna Status no Explorer)
+    target_link_libraries(owncloudGui PRIVATE cldapi windowsapp)
 elseif(UNIX AND NOT APPLE)
     ## handle DBUS for Fdo notifications
     if (TARGET Qt::DBus)

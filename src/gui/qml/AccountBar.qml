@@ -145,7 +145,7 @@ Rectangle {
                 ColumnLayout {
                     spacing: 0
                     Label { text: "Precisa de ajuda?"; color: "white"; font.family: "Nunito Sans"; font.weight: Font.Bold; font.pixelSize: 13 }
-                    Label { text: "WhatsApp (13) 4042-3797"; color: "#9AA0AC"; font.family: "Nunito Sans"; font.pixelSize: 12 }
+                    Label { text: "Fale com o suporte"; color: "#9AA0AC"; font.family: "Nunito Sans"; font.pixelSize: 12 }
                 }
             }
         }

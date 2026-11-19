@@ -1,0 +1,150 @@
+{
+  "common": {
+    "name": "Drive",
+    "slogan": "Drive · um produto DBPixel",
+    "logo": "themes/dbpixel/assets/logo.svg"
+  },
+  "ios": {},
+  "web": {
+    "default": {
+      "general": {
+        "name": "Drive",
+        "slogan": "Drive · um produto DBPixel"
+      },
+      "logo": {
+        "topbar": "themes/dbpixel/assets/logo.svg",
+        "favicon": "themes/dbpixel/assets/favicon.png",
+        "login": "themes/dbpixel/assets/logo-escuro.svg",
+        "notFound": "themes/dbpixel/assets/nuvem.svg"
+      },
+      "loginPage": {
+        "autoRedirect": true,
+        "backgroundImg": "themes/dbpixel/assets/fundo-login.svg"
+      },
+      "designTokens": {
+        "colorPalette": {
+          "background-accentuate": "rgba(111, 139, 184, 0.12)",
+          "background-default": "#FFFFFF",
+          "background-highlight": "#EBF0F7",
+          "background-muted": "#F7F8FA",
+          "background-secondary": "#FFFFFF",
+          "background-hover": "#F1F4F9",
+          "border": "#E6E8EC",
+          "input-bg": "#FFFFFF",
+          "input-border": "#D0D5DD",
+          "input-text-default": "#0A1222",
+          "input-text-muted": "#5E6573",
+          "swatch-brand-default": "#041F46",
+          "swatch-brand-hover": "#0B2A57",
+          "swatch-brand-contrast": "#FFFFFF",
+          "swatch-danger-default": "#B42318",
+          "swatch-danger-hover": "#912018",
+          "swatch-danger-muted": "#F3B7B2",
+          "swatch-danger-contrast": "#FFFFFF",
+          "swatch-inverse-default": "#FFFFFF",
+          "swatch-inverse-hover": "#FFFFFF",
+          "swatch-inverse-muted": "#C9D4E5",
+          "swatch-passive-default": "#5E6573",
+          "swatch-passive-hover": "#3A404C",
+          "swatch-passive-muted": "#98A2B3",
+          "swatch-passive-contrast": "#FFFFFF",
+          "swatch-primary-default": "#47689A",
+          "swatch-primary-hover": "#3F5F8F",
+          "swatch-primary-muted": "#43638F",
+          "swatch-primary-gradient": "#47689A",
+          "swatch-primary-contrast": "#FFFFFF",
+          "swatch-success-default": "#146C36",
+          "swatch-success-hover": "#0F5A2C",
+          "swatch-success-muted": "#A6D9B8",
+          "swatch-success-contrast": "#FFFFFF",
+          "swatch-warning-default": "#B84000",
+          "swatch-warning-hover": "#9A3600",
+          "swatch-warning-muted": "rgba(184, 64, 0, .5)",
+          "swatch-warning-contrast": "#FFFFFF",
+          "text-default": "#0A1222",
+          "text-inverse": "#FFFFFF",
+          "text-muted": "#5E6573",
+          "icon-folder": "#6F8BB8",
+          "icon-archive": "#B54708",
+          "icon-image": "#7A5AF8",
+          "icon-spreadsheet": "#1D7A46",
+          "icon-document": "#1570EF",
+          "icon-video": "#C11574",
+          "icon-audio": "#0E9384",
+          "icon-presentation": "#D9480F",
+          "icon-pdf": "#D92D20"
+        }
+      }
+    },
+    "default-dark": {
+      "general": {
+        "name": "Drive",
+        "slogan": "Drive · um produto DBPixel"
+      },
+      "logo": {
+        "topbar": "themes/dbpixel/assets/logo.svg",
+        "favicon": "themes/dbpixel/assets/favicon.png",
+        "login": "themes/dbpixel/assets/logo-escuro.svg",
+        "notFound": "themes/dbpixel/assets/nuvem.svg"
+      },
+      "loginPage": {
+        "autoRedirect": true,
+        "backgroundImg": "themes/dbpixel/assets/fundo-login.svg"
+      },
+      "designTokens": {
+        "colorPalette": {
+          "background-accentuate": "rgba(157, 182, 220, 0.16)",
+          "background-default": "#0B1220",
+          "background-highlight": "#1B2A44",
+          "background-muted": "#111A2B",
+          "background-secondary": "#152036",
+          "background-hover": "#18243A",
+          "border": "#243149",
+          "input-bg": "#111A2B",
+          "input-border": "#33415C",
+          "input-text-default": "#E8ECF2",
+          "input-text-muted": "#A3A9B5",
+          "swatch-brand-default": "#060B16",
+          "swatch-brand-hover": "#111A2B",
+          "swatch-brand-contrast": "#FFFFFF",
+          "swatch-danger-default": "#B42318",
+          "swatch-danger-hover": "#912018",
+          "swatch-danger-muted": "#F3B7B2",
+          "swatch-danger-contrast": "#FFFFFF",
+          "swatch-inverse-default": "#FFFFFF",
+          "swatch-inverse-hover": "#FFFFFF",
+          "swatch-inverse-muted": "#C9D4E5",
+          "swatch-passive-default": "#A3A9B5",
+          "swatch-passive-hover": "#3A404C",
+          "swatch-passive-muted": "#6B7385",
+          "swatch-passive-contrast": "#FFFFFF",
+          "swatch-primary-default": "#9DB6DC",
+          "swatch-primary-hover": "#B5C9E6",
+          "swatch-primary-muted": "#9DB6DC",
+          "swatch-primary-gradient": "#9DB6DC",
+          "swatch-primary-contrast": "#0A1222",
+          "swatch-success-default": "#146C36",
+          "swatch-success-hover": "#0F5A2C",
+          "swatch-success-muted": "#A6D9B8",
+          "swatch-success-contrast": "#FFFFFF",
+          "swatch-warning-default": "#B84000",
+          "swatch-warning-hover": "#9A3600",
+          "swatch-warning-muted": "rgba(184, 64, 0, .5)",
+          "swatch-warning-contrast": "#FFFFFF",
+          "text-default": "#E8ECF2",
+          "text-inverse": "#0A1222",
+          "text-muted": "#A3A9B5",
+          "icon-folder": "#9DB6DC",
+          "icon-archive": "#B54708",
+          "icon-image": "#7A5AF8",
+          "icon-spreadsheet": "#1D7A46",
+          "icon-document": "#1570EF",
+          "icon-video": "#C11574",
+          "icon-audio": "#0E9384",
+          "icon-presentation": "#D9480F",
+          "icon-pdf": "#D92D20"
+        }
+      }
+    }
+  }
+}
